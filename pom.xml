@@ -21,6 +21,16 @@
         <!-- Java version -->
         <maven.compiler.release>17</maven.compiler.release>
 
+        <!-- SonarQube server URL -->
+        <sonar.host.url>http://localhost:9000</sonar.host.url>
+
+        <!-- SonarQube project identification -->
+        <sonar.projectKey>jenkins_project2b</sonar.projectKey>
+        <sonar.projectName>jenkins_project2b</sonar.projectName>
+
+        <!-- JaCoCo XML report generated during 'verify' -->
+        <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+
     </properties>
 
     <dependencyManagement>
@@ -111,13 +121,13 @@
                 <version>3.1.2</version>
             </plugin>
 
-            <!-- Site -->
+            <!-- Maven Site -->
             <plugin>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.12.1</version>
             </plugin>
 
-            <!-- Reports -->
+            <!-- Project Information Reports -->
             <plugin>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.6.1</version>
@@ -134,6 +144,7 @@
 
                     <!-- Attach JaCoCo agent before tests -->
                     <execution>
+
                         <id>prepare-agent</id>
 
                         <goals>
@@ -142,7 +153,7 @@
 
                     </execution>
 
-                    <!-- Generate HTML and XML reports during verify -->
+                    <!-- Generate HTML and XML coverage reports during verify -->
                     <execution>
 
                         <id>report</id>
@@ -156,10 +167,8 @@
                         <configuration>
 
                             <formats>
-
                                 <format>HTML</format>
                                 <format>XML</format>
-
                             </formats>
 
                         </configuration>
@@ -167,6 +176,15 @@
                     </execution>
 
                 </executions>
+
+            </plugin>
+
+            <!-- SonarQube Scanner for Maven -->
+            <plugin>
+
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>4.0.0.4121</version>
 
             </plugin>
 
