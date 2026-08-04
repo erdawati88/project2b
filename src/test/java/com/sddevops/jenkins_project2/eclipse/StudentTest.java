@@ -16,7 +16,8 @@ class StudentTest {
     void testConstructorWithoutBestFriend() {
         Student s = new Student(1, "Alice", LocalDate.of(2025, Month.JANUARY, 1));
 
-        assertEquals(1, s.getId());
+     // Intentionally changed from 1 to 999 to demonstrate a failing JUnit test in the CI pipeline.
+        assertEquals(999, s.getId());
         assertEquals("Alice", s.getName());
         assertEquals(LocalDate.of(2025, Month.JANUARY, 1), s.getBirthday());
         assertNull(s.getFriend());
