@@ -15,4 +15,4 @@
 4. Publish JUnit Results
 5. Publish JaCoCo Coverage Report
 
-This project demonstrates a Continuous Integration (CI) pipeline using Jenkins Pipeline, Maven, JUnit, JaCoCo and SonarQube.
+This project demonstrates a Continuous Integration (CI) pipeline using Jenkins Pipeline, Maven, JUnit, JaCoCo, SonarQube, and Quality Gate verification.
