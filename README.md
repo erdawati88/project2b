@@ -1,7 +1,7 @@
 # Project2B - Jenkins CI/CD Pipeline
 
 ## Repository Status
-This repository contains the final merged version of Project 2B after CI/CD pipeline validation
+This repository contains the final merged version of Project 2B after CI/CD pipeline validation.
 
 ## Technologies Used
 - Java 17
