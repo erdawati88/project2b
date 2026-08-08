@@ -15,4 +15,12 @@
 4. Publish JUnit Results
 5. Publish JaCoCo Coverage Report
 
-This project demonstrates a Continuous Integration (CI) pipeline using Jenkins Pipeline, Maven, JUnit, JaCoCo, SonarQube, and Quality Gate verification.
+## Features Demonstrated
+- Automated CI pipeline using Jenkins Pipeline
+- Poll SCM automatic build trigger
+- Automated JUnit test execution
+- JaCoCo code coverage reporting
+- SonarQube static code analysis
+- SonarQube Quality Gate verification
+
+This project demonstrates a Continuous Integration (CI) pipeline using Jenkins Pipeline, Maven, JUnit, JaCoCo, SonarQube, and Quality Gate verification. Every commit pushed to the repository automatically triggers the pipeline, which builds the project, executes unit tests, performs static code analysis, validates the Quality Gate, and publishes the test and code coverage reports.
