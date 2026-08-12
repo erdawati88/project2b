@@ -9,7 +9,6 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StudentTest {
-
     @Test
     // Purpose: Verify that the constructor correctly initializes a student without a best friend.
     // Scenario: Positive
@@ -156,25 +155,27 @@ class StudentTest {
     @Test
     // Purpose: Verify that assignRandomUsername() generates a predictable
     // username using a stubbed Random object.
-    // Scenario: Positive (Stub)
-    void testAssignRandomUsernameUsingStubbedRandom() {
-        Student s = new Student(1, "Original", LocalDate.of(2025, Month.JANUARY, 1));
+    // Scenario: Positive (Mockito)
+    void testAssignRandomUsernameUsingMockRandom() {
 
-        Random stubRandom = new Random() {
-            @Override
-            public int nextInt(int bound) {
-                return 0;
-            }
-        };
+        Student s = new Student(
+                1,
+                "Original",
+                LocalDate.of(2025, Month.JANUARY, 1));
 
-        s.assignRandomUsername(stubRandom);
+        Random mockRandom = org.mockito.Mockito.mock(Random.class);
 
-        // Stub always returns 0:
+        org.mockito.Mockito.when(mockRandom.nextInt(org.mockito.ArgumentMatchers.anyInt()))
+                .thenReturn(0);
+
+        s.assignRandomUsername(mockRandom);
+
+        // Mock always returns 0:
         // Username length = 5
         // Character selected = 'A'
         assertEquals("AAAAA", s.getName());
     }
-
+    
     @Test
     // Purpose: Verify that assignRandomUsername() generates a username
     // with a valid length and only supported characters.
