@@ -27,3 +27,5 @@ This repository contains the final merged version of Project 2B after CI/CD pipe
 - SonarQube Quality Gate verification
 
 This project demonstrates a Continuous Integration (CI) pipeline using Jenkins Pipeline, Maven, JUnit, JaCoCo, SonarQube, and Quality Gate verification. Every commit pushed to the repository automatically triggers the pipeline, which builds the project, executes unit tests, performs static code analysis, validates the Quality Gate, and publishes the test and code coverage reports.
+
+Edit a test to demonstrate Mockito by mocking Random in StudentTest
